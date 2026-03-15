@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "entities": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Canonical name of the entity"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Entity type, e.g. Person, Object, Location, Organisation, Concept, Event, Equipment, Attribute"
+                    }
+                },
+                "required": ["name", "type"]
+            },
+            "minItems": 2,
+            "maxItems": 8
+        },
+        "relationships": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "string",
+                        "description": "Must match an entity name exactly"
+                    },
+                    "target": {
+                        "type": "string",
+                        "description": "Must match an entity name exactly"
+                    },
+                    "relation": {
+                        "type": "string",
+                        "description": "UPPER_SNAKE_CASE verb, e.g. PLACES, CAUSES, LOCATED_IN"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Free-text description of this relationship"
+                    }
+                },
+                "required": ["source", "target", "relation"]
+            },
+            "minItems": 1,
+            "maxItems": 10
+        }
+    },
+    "required": ["entities", "relationships"]
+}
