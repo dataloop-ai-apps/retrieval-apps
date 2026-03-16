@@ -21,7 +21,7 @@
     "modules": [
       {
         "name": "graph-rag-module",
-        "entryPoint": "graph_rag/graph_rag.py",
+        "entryPoint": "retrievers/graph_rag/graph_rag.py",
         "className": "ServiceRunner",
         "functions": [
           {
@@ -129,6 +129,18 @@
                 }
               ],
               "widget": "dl-input"
+            },
+            {
+              "name": "store_text",
+              "title": "store text",
+              "description": "Whether to store the text of the chunk in the graph.",
+              "props": {
+                "type": "boolean",
+                "title": true,
+                "default": false,
+                "placeholder": "Enter true to store the text of the chunk in the graph"
+              },
+              "widget": "dl-checkbox"
             }
           ]
         }
@@ -161,6 +173,18 @@
                   "effect": "error"
                 }
               ],
+              "widget": "dl-input"
+            },
+            {
+              "name": "hops",
+              "title": "hops",
+              "description": "The number of hops to search the graph.",
+              "props": {
+                "type": "number",
+                "title": true,
+                "default": 2,
+                "placeholder": "Enter the number of hops"
+              },
               "widget": "dl-input"
             }
           ]
