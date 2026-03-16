@@ -204,7 +204,7 @@ class ServiceRunner(dl.BaseServiceRunner):
         item_id: str,
         entities: list[dict],
         relationships: list[dict],
-        store_text: bool = True,
+        store_text: bool = False,
     ):
         chunk_node = f"Chunk:{chunk_name}"
         node_attrs = {"type": "chunk", "item_id": item_id}
@@ -243,7 +243,7 @@ class ServiceRunner(dl.BaseServiceRunner):
     # ------------------------------------------------------------------ #
     #  1. Build graph — incremental, one item at a time                   #
     # ------------------------------------------------------------------ #
-    def add_chunk_to_graph(self, item: dl.Item, store_text: bool = True) -> dl.Item:
+    def add_chunk_to_graph(self, item: dl.Item, store_text: bool = False) -> dl.Item:
         """
         Pipeline node — accepts one of:
 
