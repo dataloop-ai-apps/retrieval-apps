@@ -138,7 +138,7 @@
                 "type": "boolean",
                 "title": true,
                 "default": false,
-                "required": true
+                "placeholder": "Enter true to store the text of the chunk in the graph"
               },
               "widget": "dl-checkbox"
             }
@@ -180,10 +180,10 @@
               "title": "hops",
               "description": "The number of hops to search the graph.",
               "props": {
-                "type": "integer",
+                "type": "number",
                 "title": true,
                 "default": 2,
-                "required": true
+                "placeholder": "Enter the number of hops"
               },
               "widget": "dl-input"
             }
